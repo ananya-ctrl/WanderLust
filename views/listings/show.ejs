@@ -86,7 +86,7 @@
           <% } %>
         </div>
       <% } %>
-      <p class="card-text">
+<p class="card-text listing-description mt-3 mb-3">
         <%= listing.description || "No description available" %>
       </p>
       <p class="card-text">
@@ -662,5 +662,31 @@ document.addEventListener('DOMContentLoaded', function() {
 .translate-btn:disabled {
   opacity: 0.6;
   cursor: not-allowed;
+}
+/* FIX for Listing Description Enhancement (Level 3) */
+.listing-description {
+    /* FIX 1: Add strong vertical spacing/hierarchy */
+    margin-top: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+
+    /* FIX 2: Enhance Contrast (Primary Goal) */
+    color: #ffffff !important; 
+    
+    /* FIX 3: Add Texture/Design/Pop */
+    font-weight: 400; 
+    font-size: 1.15rem; 
+    line-height: 1.7; 
+    
+    /* Add a subtle shadow for a "pop" effect and separation from the background */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
+}
+
+/* Ensure the text is readable in Light Mode if the card background changes */
+@media (prefers-color-scheme: light) {
+    /* If the background becomes light, we must force the text to be dark */
+    .listing-description {
+         color: #333333 !important; 
+         text-shadow: none;
+    }
 }
 </style>
